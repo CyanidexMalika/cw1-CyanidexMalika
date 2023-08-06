@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
+
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website with Login & Registration Form</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Unicons -->
+    
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
 
@@ -70,27 +70,28 @@
 
                     <div class="input-group">
                     
-                        <input type="text" id="Fname" placeholder="Enter your FullName" onkeyup="Namevalidation()">
+                        <input type="text" id="Fname" name="username" placeholder="Enter your FullName" onkeyup="Namevalidation()">
                         <i class="uil uil-user email"></i>
                         <span id="error1"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="Email" placeholder="Enter your email" onkeyup="Emailvalidation()">
+                        <input type="text" id="Email" name="email" placeholder="Enter your email" onkeyup="Emailvalidation()">
                         <i class="uil uil-envelope-alt email"></i>
                         <span id="error3"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="Password" placeholder="Create password" onkeyup="Passwordvalidation()">
-                        <i class="uil uil-lock password"></i>
-                        <i class="uil uil-eye-slash pw_hide"></i>
-                        <span id="error2"></span>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" id="Gender" placeholder="Enter your Gender" onkeyup="Gendervalidation()">
+                        <input type="text" id="Gender" name="gender" placeholder="Enter your Gender" onkeyup="Gendervalidation()">
                         <i class="uil uil-user email"></i>
                         <span id="error4"></span>
                     
                     </div>
+                    <div class="input-group">
+                        <input type="password" id="Password" name="password" placeholder="Create password" onkeyup="Passwordvalidation()">
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                        <span id="error2"></span>
+                    </div>
+                   
                     <button class="button" onclick="return Formvalidation()">Submit</button>
                     
                     <div class="logintosignup">Already have an account? <a href="#" id="login">Login</a></div>
