@@ -1,11 +1,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
+html{
+    overflow-x:hidden;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+    font-family:"poppins";
+    scroll-behavior: smooth;
+    outline: none;
+    border: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    color: white;
+    background: black;
 }
 
 a {
@@ -18,12 +32,16 @@ a {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
+    justify-content: space-between;
+    background: rgba(74, 74, 74, 0.37);
+    backdrop-filter: blur(15px);
 }
 
 .navigationbarho {
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
+    font-size: 1.7rem;
 }
 
 .navigationbarho,
@@ -42,6 +60,8 @@ a {
 
 .hacker {
     font-size: 25px;
+    font-weight: 700;
+    
 }
 
 .navigationkolist{
@@ -60,20 +80,57 @@ a {
     background: transparent;
     border-radius: 6px;
     cursor: pointer;
+    transition: .5s ease;
+}
+.button:hover{
+backdrop-filter: blur(25px);
 }
 
-.button:active {
-    transform: scale(0.98);
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
 }
-
 
 .home {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("bg.avif");
+   
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homekodescription h3{
+    font-size: 3rem;
+    font-weight: 400;
+}
+.homekodescription h1{
+    font-size: 4rem;
+    margin: -3px 0;
+    opacity: 1;
+    
+}
+.homekodescription{
+    color: white;
+}
+.homekodescription p{
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 1;
+    text-align: justify;
+
+}
+.colortospan{
+    color: orange;
+    font-size: 5rem;
+}
+.home .logohacker img{
+    display: flex;
+    width: 25vw;
+    height: 10cm;
+
 }
 
 .home::before {
@@ -81,7 +138,7 @@ a {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 100;
     opacity: 0;
     pointer-events: none;
@@ -92,8 +149,79 @@ a {
     opacity: 1;
     pointer-events: auto;
 }
+.aboutsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    
+}
+.aboutimage img{
+        
+        width: 18vw;
+        height: 6cm;
+}
+.aboutsection p{
+    color: orange;
+}
+
+.aboutheading{
+    text-align: center;
+    font-size:4rem;
+}
+
+.abouttext h2 {
 
 
+    text-align: center;
+    line-height: 1.2;
+    
+}
+.abouttext h3{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.abouttext p{
+    font-size: medium;
+    text-align: justify;
+    margin:1rem 0 2rem 0;
+}
+
+.servicekosection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.servicekosection .servicebox{
+    flex: 1 1 30rem;
+    padding:3rem 2rem 4rem ;
+    border-radius: 4rem;
+    background-color: #111;
+    text-align: center;
+    border: 3px solid #000;
+    transition: .5s ease;
+}
+.servicebox:hover{
+    border: 2px solid orange;
+    transform: scale(1.15);
+}
+.service h2{
+    margin-bottom: 5rem;
+}
+.service h3{
+    font-size: 2.6rem;
+}
+.servicebox p{
+    font: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+footer{
+    background-color: rgba(74, 74, 74, 0.37);
+    backdrop-filter: blur(15px);
+}
 .form_container {
     position: fixed;
     max-width: 320px;
@@ -102,7 +230,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
     z-index: 101;
-    background: #fff;
+    background: white;
     padding: 25px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.1);
@@ -245,3 +373,23 @@ span{
     margin-top: 15px;
     transition: all 1s ease;
 }
+.contact h2{
+    margin-bottom: 3rem;
+
+}
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+form .contactform{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.footerform{
+    color: #eef617;
+}
+

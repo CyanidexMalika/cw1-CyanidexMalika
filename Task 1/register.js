@@ -25,6 +25,18 @@ function Namevalidation(){
     }
 
 }
+function Emailvalidation(){
+    var email = document.getElementById('Email').value;
+    
+    if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        Emailerror.innerHTML = 'Invalid Email';
+        return false;
+    }
+    else{
+        Emailerror.innerHTML = '<i class="fa-solid fa-check"></i>'
+        return true;
+    }
+}
 function Passwordvalidation(){
     var password = document.getElementById('Password').value;
     
@@ -42,18 +54,7 @@ function Passwordvalidation(){
         return true;
     }
 }
-function Emailvalidation(){
-    var email = document.getElementById('Email').value;
-    
-    if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        Emailerror.innerHTML = 'Invalid Email';
-        return false;
-    }
-    else{
-        Emailerror.innerHTML = '<i class="fa-solid fa-check"></i>'
-        return true;
-    }
-}
+
 function Gendervalidation(){
     var gender = document.getElementById('Gender').value;
     
@@ -93,6 +94,7 @@ function Loginvalidation(){
         setTimeout(function(){loginerror.style.display = 'none';}, 3000);
         return false;
     }
+    
     
 }
 

@@ -26,8 +26,8 @@ include "inserting.php";
             <ul class="navigation">
                 <li class="navigationkolist">
                     <a href="#" class="navigation_item">Home</a>
-                    <a href="#" class="navigation_item">Product</a>
                     <a href="#" class="navigation_item">Services</a>
+                    <a href="#" class="navigation_item">About</a>
                     <a href="#" class="navigation_item">Contact</a>
                 </li>
             </ul>
@@ -109,7 +109,86 @@ include "inserting.php";
                 </form>
             </div>
         </div>
+        <div class="homekodescription">
+            <h1>Welcome Hackers</h1>
+            <h3>Secure <span class="colortospan">Banking Platform</span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit explicabo alias dolore, debitis delectus
+                deserunt
+                consequuntur tenetur adipisci ab minima voluptas recusandae quae atque voluptate laborum nihil
+                asperiores
+                libero
+                soluta.</p>
+        </div>
+        <div class="logohacker">
+            <img src="hackericon.png" alt="">
+        </div>
     </section>
+    <section class="aboutsection">
+        <div class="aboutimage">
+            <img src="3hacker.png" alt="">
+        </div>
+
+        <div class="abouttext">
+            <h2 class="aboutheading">About <span class="colortospan">Us</span></h2>
+            <h3>Bank Services</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit explicabo alias dolore, debitis delectus
+                deserunt
+                consequuntur tenetur adipisci ab minima voluptas recusandae quae atque voluptate laborum nihil
+                asperiores
+                libero
+                soluta.</p>
+
+        </div>
+
+    </section>
+    <section class="service">
+        <h2 class="aboutheading">Our <span class="colortospan">Services</span></h2>
+        <div class="servicekosection">
+            <div class="servicebox">
+                <h3>Secure Banking</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, mollitia earum. Ab autem nostrum sunt
+                    blanditiis eaque ullam quod minus magnam ad ipsam sed facere praesentium, fuga eveniet sequi
+                    possimus.
+                </p>
+            </div>
+            <div class="servicebox">
+                <h3>Mobile Banking</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, mollitia earum. Ab autem nostrum sunt
+                    blanditiis eaque ullam quod minus magnam ad ipsam sed facere praesentium, fuga eveniet sequi
+                    possimus.
+                </p>
+            </div>
+            <div class="servicebox">
+                <h3>Debit/Credit card</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, mollitia earum. Ab autem nostrum sunt
+                    blanditiis eaque ullam quod minus magnam ad ipsam sed facere praesentium, fuga eveniet sequi
+                    possimus.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="contact" id="contact">
+            <h2 class="aboutheading">Contact <span class="colortospan">Us<span></h2>
+            <form action="#" class="footerform">
+                <div class="contactform">
+                    <input type="email" placeholder="Enter your email">
+                    <input type="text" placeholder="Enter your Fullname" required>
+
+                </div>
+                <div class="contactform">
+                    <input type="tel" placeholder="Enter your email">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="Submit" value="Submit enquiry" class="button">
+
+            </form>
+
+        </section>
+    </footer>
+
+
 
     <script src="script.js"></script>
     <script src="register.js"></script>
