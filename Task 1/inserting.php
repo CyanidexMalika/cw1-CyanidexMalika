@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         $query = "INSERT INTO `list`(`fullname`, `email`, `gender`, `password`) VALUES ('$fullname','$email','$gender','$encryptedpassword')";
         mysqli_query($conn, $query);
+        header("location: index.php");
         echo "<script>alert('registration done');</script>";
     }
 }

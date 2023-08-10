@@ -12,15 +12,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $gethash = $conn->query("SELECT password FROM list WHERE email = '$loginemail'");
         $hashpasswordcompare = $gethash->fetch_assoc()['password'];
         if (password_verify($loginpassword, $hashpasswordcompare)) {
-            $_SESSION["login"] = true;
-            $_SESSION["id"] = $row["id"];
-            header("location: welcome.php");
+            session_start();
+            session_regenerate_id(); // Prevents session fixation attack
+
+            $_SESSION["user_id"] = $row["id"]; // Changed to $row["id"]
+
+            if ($row['role'] === "admin") {
+                header("Location: admin.php");
+            } else {
+                header("Location: welcome.php"); // Redirect for regular users
+            }
+            exit(); // Added exit after each header()
 
         } else {
-            echo "<script>alert('Wronggg Credentials')</script>";
-
+            echo "<script>alert('Wrong Credentials'); window.location = 'index.php';</script>";
+            exit();
         }
     }
 }
-
 ?>
