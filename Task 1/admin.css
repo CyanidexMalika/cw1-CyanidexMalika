@@ -1,4 +1,4 @@
-/* Reset some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body,
 h1,
 h2,
@@ -8,11 +8,12 @@ li,
 p {
     margin: 0;
     padding: 0;
+
 }
 
-/* Global Styles */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Poppins', sans-serif; 
 }
 
 .container {
@@ -22,10 +23,11 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #db7329;
+    color: orangered;
     padding: 10px 0;
     text-align: center;
+    align-items: center;
 }
 
 nav ul {
@@ -44,7 +46,71 @@ nav ul li a {
 
 main {
     padding: 20px;
+    
 }
+a{
+    display: flex;
+    justify-content: center;
+    
+    text-decoration: none;
+    color: black;
+    transition: .5s ease-in;
+    text-align: center;
+    
+}
+a:hover{
+    color: orangered;
+}
+
+
+#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#userTable th,
+#userTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#userTable th {
+    background-color: #f2f2f2;
+}
+
+#userTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#userTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+#userTable td.actions {
+    white-space: nowrap;
+}
+
+#userTable .action-btn {
+    margin-right: 5px;
+    padding: 3px 8px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#userTable .action-btn.delete-btn {
+    background-color: #dc3545;
+}
+
+#userTable .action-btn:hover {
+    background-color: #0056b3;
+}
+
 
 table {
     border-collapse: collapse;
@@ -64,11 +130,41 @@ td {
     text-align: left;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+.navigation_item {
+    color: black;
+    text-decoration: none;
+   display: flex;
+   justify-content: right;
+}
+.navigation_item:hover {
+    color: orangered;
+    transition: 1s;
 }
 
-/* Add more styles as needed */
+
+/* Add this CSS in your <style> tag or in a separate .css file */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container p {
+    margin: 0;
+}
+
+/* Adding a hover effect to the copyright text */
+.container p:hover {
+    color: #ff9800;
+    transition: color 0.3s ease;
+}

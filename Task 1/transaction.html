@@ -1,16 +1,79 @@
-<main>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard - Transaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: .5s ease-in ;
+        }
+
+        input[type="submit"]:hover {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
     <h1>Admin Dashboard</h1>
 
     <h2>Transaction</h2>
     <form action="process_transaction.php" method="POST">
         <label for="user_id">User ID:</label>
-        <input type="text" name="user_id" id="user_id" required><br>
+        <input type="text" name="user_id" id="user_id" required>
 
         <label for="amount">Amount:</label>
-        <input type="number" name="amount" id="amount" required><br>
+        <input type="number" name="amount" id="amount" required>
 
         <input type="submit" value="Process Transaction">
     </form>
+</body>
 
-    <!-- Rest of the content -->
-</main>
+</html>

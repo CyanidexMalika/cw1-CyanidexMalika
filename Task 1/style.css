@@ -25,7 +25,9 @@ section{
     color: white;
 }
 
-
+.loginblack{
+    color: black;
+}
 .head {
     position: fixed;
     height: 80px;
@@ -448,6 +450,9 @@ span{
     text-align: center;
     margin-top: 15px;
     transition: all 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .contact h2{
     margin-bottom: 3rem;

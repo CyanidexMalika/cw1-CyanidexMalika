@@ -36,12 +36,14 @@ if (!$result) {
 
 <body>
     <?php if (isset($user)): ?>
-        <h1>Welcome,
-            <?= htmlspecialchars($user["fullname"]) ?>!
+        <h1>Welcome,<span class="name">
+                <?= htmlspecialchars($user["fullname"]) ?>!</h3>
         </h1>
+
         <p>Your email:
             <?= htmlspecialchars($user["email"]) ?>
         </p>
+
         <p>Your gender:
             <?= htmlspecialchars($user["gender"]) ?>
         </p>

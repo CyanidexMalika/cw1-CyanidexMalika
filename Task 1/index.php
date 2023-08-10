@@ -71,7 +71,8 @@ include "inserting.php";
 
                     <button onclick="return Loginvalidation()" class="button">Login Now</button>
 
-                    <div class="login_signup black">Don't have an account? <a href="#" id="signup">Signup</a>
+                    <div class="login_signup ">
+                        <div class="loginblack">Don't have an account?</div> <a href="#" id="signup">Signup</a>
                     </div>
                 </form>
             </div>
@@ -111,7 +112,10 @@ include "inserting.php";
 
                     <button class="button" onclick="return Formvalidation()">Submit</button>
 
-                    <div class="logintosignup">Already have an account? <a href="#" id="login">Login</a></div>
+                    <div class="logintosignup">
+                        <p class="loginblack">Already have an account?</p><a href="#" id="login">Login</a>
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -163,7 +167,7 @@ include "inserting.php";
             <div class="servicebox">
                 <h3>Mobile Banking</h3>
                 <p> With our mobile app, you can manage your finances on the go. From checking your account balance to
-                    transferring funds, paying bills, and even depositing checks – everything is just a tap away. Enjoy
+                    transferring funds, paying bills, and even depositing checks everything is just a tap away. Enjoy
                     the ease of banking right from your mobile device, ensuring your financial transactions are safe,
                     fast, and hassle-free. Download our app now and experience the future of banking at your fingertips.
                 </p>
@@ -179,16 +183,18 @@ include "inserting.php";
         </div>
     </section>
     <footer>
+
+
         <section class="contact" id="contact">
             <h2 class="aboutheading">Contact <span class="colortospan">Us<span></h2>
-            <form action="#" class="footerform">
+            <form action="process_form.php" method="post" class="footerform">
                 <div class="contactform">
                     <input type="email" class="contactinput" placeholder="Enter your email">
                     <input type="text" class="contactinput" placeholder="Enter your Fullname" required>
 
                 </div>
                 <div class="contactform">
-                    <input type="tel" class="contactinput" placeholder="Enter your email">
+                    <input type="tel" class="contactinput" placeholder="Enter your Number">
                     <input type="text" class="contactinput" placeholder="Subject">
                 </div>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
