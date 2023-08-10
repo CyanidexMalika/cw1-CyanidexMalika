@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mysqli = new mysqli("hostname", "root", "", "signup");
+$mysqli = new mysqli("localhost", "root", "", "signup");
 
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);

@@ -5,7 +5,7 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: index.php");
     exit();
 }
-$mysqli = new mysqli("hostname", "root", "", "signup");
+$mysqli = new mysqli("localhost", "root", "", "signup");
 
 // Check connection
 if ($mysqli->connect_error) {
@@ -14,7 +14,7 @@ if ($mysqli->connect_error) {
 $user_id = $_SESSION["user_id"];
 $query = "SELECT * FROM `list` WHERE `id` = '$user_id'";
 $result = $mysqli->query($query);
-
+//error handling part
 if (!$result) {
     echo "Query error: " . $mysqli->error;
 } else {
@@ -33,6 +33,7 @@ if (!$result) {
     <title>Welcome</title>
     <link rel="stylesheet" href="welcome.css">
 </head>
+<!--Welcome page for normal users containing only basic details-->
 
 <body>
     <?php if (isset($user)): ?>
@@ -48,6 +49,7 @@ if (!$result) {
             <?= htmlspecialchars($user["gender"]) ?>
         </p>
         <a href="logout.php">Logout</a>
+        <!--error handling-->
     <?php else: ?>
         <p>Something went wrong. Please try again later.</p>
     <?php endif; ?>

@@ -15,17 +15,17 @@ if ($conn->connect_error) {
 
 // Process form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $fullname = $_POST["fullname"];
-    $phone = $_POST["phone"];
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
+    $email = $_POST["emailsub"];
+    $fullname = $_POST["fullnamesub"];
+    $phone = $_POST["phonesub"];
+    $subject = $_POST["subjectsub"];
+    $message = $_POST["messagesub"];
 
     // Insert data into the database
     $sql = "INSERT INTO submissions (email, fullname, phone, subject, message) VALUES ('$email', '$fullname', '$phone', '$subject', '$message')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Submitted successfully'); window.location = 'index.php';</script>";
+        echo "<script>alert('Submitted successfully'); window.location = 'index.php' </script>";
         exit();
 
 

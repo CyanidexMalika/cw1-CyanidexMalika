@@ -1,4 +1,4 @@
-
+//form validation at first getting user inputted data for every error
 var Fnameerror = document.getElementById('error1');
 var Passworderror = document.getElementById('error2');
 var Emailerror = document.getElementById('error3');
@@ -8,7 +8,7 @@ var loginerror = document.getElementById('error6');
 var emailloginerror = document.getElementById('error7');
 
 
-
+//crating a function Namevalidation to check length matching of name format using regexpression and also for blank
 function Namevalidation(){
     var name = document.getElementById('Fname').value;
     if(name.length == 0){
@@ -25,6 +25,7 @@ function Namevalidation(){
     }
 
 }
+//function emailvalidation fo checking validity of email like @ and .com feature
 function Emailvalidation(){
     var email = document.getElementById('Email').value;
     
@@ -37,6 +38,7 @@ function Emailvalidation(){
         return true;
     }
 }
+//function passwordvalidation for cheacking null value or strong password consisting of small, capital letter, length, etc.
 function Passwordvalidation(){
     var password = document.getElementById('Password').value;
     
@@ -54,7 +56,7 @@ function Passwordvalidation(){
         return true;
     }
 }
-
+//gender validation only checks wheather it is empty or not
 function Gendervalidation(){
     var gender = document.getElementById('Gender').value;
     
@@ -68,12 +70,15 @@ function Gendervalidation(){
     }
 
 }
+//form validation fro chekcing the data is inserted in above all section or not
 function Formvalidation(){
-    if ( !Namevalidation() || !Passwordvalidation() || !Emailvalidation() || !Gendervalidation() ){
-    submiterror.innerHTML == 'Please correct above ones first';
-    return false;
+    if (!Namevalidation() || !Passwordvalidation() || !Emailvalidation() || !Gendervalidation()) {
+        submiterror.innerHTML = 'Please correct the errors above first';
+        return false;
     }
     
+    // Return true only if all validations pass
+    return true;
 }
 function Emailloginvalidation(){
     var emaillogin = document.getElementById('email1').value;
@@ -90,12 +95,13 @@ function Emailloginvalidation(){
 function Loginvalidation(){
     if (!Emailloginvalidation()){
         loginerror.style.display = 'block';
-        loginerror.innerHTML == 'Please correct above Errors';
-        setTimeout(function(){loginerror.style.display = 'none';}, 3000);
+        loginerror.innerHTML = 'Please correct the error above';
+        setTimeout(function(){ loginerror.style.display = 'none'; }, 3000);
         return false;
     }
     
-    
+    // Return true only if login validation passes
+    return true;
 }
 
 

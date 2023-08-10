@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mysqli = new mysqli("hostname", "root", "", "signup");
+$mysqli = new mysqli("localhost", "root", "", "signup");
 
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
@@ -18,26 +18,28 @@ if (isset($_SESSION["user_id"])) {
 }
 
 if (isset($_POST['add_user'])) {
-    // Handle user addition
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
-    $role = 'user'; // Assuming role is always 'user' for added users
+    $gender = $_POST['gender'];
+    $role = 'user';
 
-    $insert_query = "INSERT INTO list (fullname, email, role) VALUES ('$fullname', '$email', '$role')";
+    $insert_query = "INSERT INTO list (fullname, email, gender, role) VALUES ('$fullname', '$email', '$gender', '$role')";
     $insert_result = $mysqli->query($insert_query);
 
     if ($insert_result) {
         $_SESSION['transaction_success'] = 'User added successfully.';
-        header("Location: admin.php"); // Redirect to the admin page to show the updated user list
+        header("Location: admin.php");
         exit();
     } else {
         $_SESSION['transaction_success'] = 'Failed to add user.';
     }
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
+<!--adding user to the database-->
 
 <head>
     <title>Add User - Admin Panel</title>
@@ -49,10 +51,11 @@ if (isset($_POST['add_user'])) {
         <header>
             <div class="container">
                 <h1>Admin Dashboard</h1>
-                <!-- Rest of the header code remains the same -->
+
             </div>
         </header>
         <main>
+            <!--adding user to database-->
             <h1>Add User</h1>
             <form method="post" action="">
                 <label for="fullname">Full Name:</label>
@@ -61,7 +64,11 @@ if (isset($_POST['add_user'])) {
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required>
+
                 <button type="submit" name="add_user">Add User</button>
+
             </form>
         </main>
         <footer>
@@ -75,6 +82,22 @@ if (isset($_POST['add_user'])) {
         exit();
         ?>
     <?php endif; ?>
+    <style>
+        button {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+        }
+
+        button:hover {
+            background-color: orangered;
+        }
+    </style>
 </body>
 
 </html>

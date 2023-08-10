@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $encryptedpassword = password_hash($password, PASSWORD_DEFAULT);
     $duplication = mysqli_query($conn, "SELECT * FROM list WHERE email = '$email'");
     if (mysqli_num_rows($duplication) > 0) {
-        echo "<script>alert('Email already exists');</script>";
+        echo "<script>alert('Email already exists'); window.location = 'index.php';</script>";
     } else {
         $query = "INSERT INTO `list`(`fullname`, `email`, `gender`, `password`) VALUES ('$fullname','$email','$gender','$encryptedpassword')";
         mysqli_query($conn, $query);

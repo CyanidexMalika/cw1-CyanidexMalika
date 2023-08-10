@@ -22,12 +22,12 @@ include "inserting.php";
 </head>
 
 <body>
-
+    <!--Starts From here-->
     <header class="head">
         <nav class="navigationbarho">
             <img src="money.png" alt="" class="moneylogo">
             <a href="#" class="hacker">HackersBank</a>
-
+            <!--Navigation -->
             <ul class="navigation">
                 <li class="navigationkolist">
                     <a href="#homeho" style="--clr:1s" class="navigation_item" class="active">Home</a>
@@ -40,7 +40,7 @@ include "inserting.php";
         </nav>
     </header>
 
-
+    <!--login form section-->
     <section class="home" id="homeho">
         <div class="form_container">
             <i class="uil uil-times form_close"></i>
@@ -119,6 +119,7 @@ include "inserting.php";
                 </form>
             </div>
         </div>
+        <!--rest of the content-->
         <div class="homekodescription">
             <h1>Welcome User</h1>
             <h3>Secure <span class="colortospan"></span></h3>
@@ -182,6 +183,7 @@ include "inserting.php";
             </div>
         </div>
     </section>
+    <!--footer section with inquiry form-->
     <footer>
 
 
@@ -189,15 +191,16 @@ include "inserting.php";
             <h2 class="aboutheading">Contact <span class="colortospan">Us<span></h2>
             <form action="process_form.php" method="post" class="footerform">
                 <div class="contactform">
-                    <input type="email" class="contactinput" placeholder="Enter your email">
-                    <input type="text" class="contactinput" placeholder="Enter your Fullname" required>
+                    <input type="email" name="emailsub" class="contactinput" placeholder="Enter your email">
+                    <input type="text" name="fullnamesub" class="contactinput" placeholder="Enter your Fullname"
+                        required>
 
                 </div>
                 <div class="contactform">
-                    <input type="tel" class="contactinput" placeholder="Enter your Number">
-                    <input type="text" class="contactinput" placeholder="Subject">
+                    <input type="tel" name="phonesub" class="contactinput" placeholder="Enter your Number">
+                    <input type="text" name="subjectsub" class="contactinput" placeholder="Subject">
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <textarea name="messagesub" id="" cols="30" rows="10" placeholder="Message"></textarea>
                 <input type="Submit" value="Submit enquiry" class="button">
 
             </form>
@@ -216,6 +219,8 @@ include "inserting.php";
     <script src="query.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="typed.js"></script>
+    <!--Script for typed.js
+    -->
     <script>
         var typed = new Typed('.colortospan', {
             strings: ["Banking Platform", "Easy Acess", "Worldwide Platform"],

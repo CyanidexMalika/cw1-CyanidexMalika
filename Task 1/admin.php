@@ -1,19 +1,18 @@
 <?php
 session_start();
-$mysqli = new mysqli("hostname", "root", "", "signup");
-
-
+$mysqli = new mysqli("localhost", "root", "", "signup");
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
-
+//using prepared statement for fetching users data from database
 if (isset($_SESSION["user_id"])) {
     $user_id = $_SESSION["user_id"];
 
-
-    $user_query = "SELECT * FROM list WHERE id = $user_id";
-    $user_result = $mysqli->query($user_query);
-
+    $user_query = "SELECT * FROM list WHERE id = ?";
+    $user_statement = $mysqli->prepare($user_query);
+    $user_statement->bind_param("i", $user_id);
+    $user_statement->execute();
+    $user_result = $user_statement->get_result();
 
     if ($user_result && $user_result->num_rows > 0) {
         $user = $user_result->fetch_assoc();
@@ -21,12 +20,14 @@ if (isset($_SESSION["user_id"])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Admin Panel</title>
     <link rel="stylesheet" href="admin.css">
+    <!--success alert for user adding-->
     <style>
         .success-alert {
             background-color: #4CAF50;
@@ -52,8 +53,8 @@ if (isset($_SESSION["user_id"])) {
             </div>
         </header>
         <main>
-            <h1>Admin Dashboard</h1>
-
+            <h1>Panel</h1>
+            <!--transaction success message section-->
 
             <?php if (isset($_SESSION['transaction_success'])): ?>
                 <div class="success-alert">
@@ -84,7 +85,7 @@ if (isset($_SESSION["user_id"])) {
                     }
                     ?>
                 </table>
-                <a href="user.php">Add User</a>
+                <a class="buttonhoako" href="user.php">Add User</a>
             </section>
 
 

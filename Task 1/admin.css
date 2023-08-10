@@ -24,7 +24,7 @@ body {
 
 header {
     background-color: #db7329;
-    color: orangered;
+    color: rgb(0, 0, 0);
     padding: 10px 0;
     text-align: center;
     align-items: center;
@@ -142,7 +142,6 @@ td {
 }
 
 
-/* Add this CSS in your <style> tag or in a separate .css file */
 footer {
     position: absolute;
     bottom: 0;
@@ -163,7 +162,7 @@ footer {
     margin: 0;
 }
 
-/* Adding a hover effect to the copyright text */
+
 .container p:hover {
     color: #ff9800;
     transition: color 0.3s ease;
